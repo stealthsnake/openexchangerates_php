@@ -33,7 +33,9 @@ To get Multiable Currency Conversion use `convert(value,your_currencies)`, where
 
 
 ```
-$currencies_value = convert(value,your_currencies)
+$currencies_value = convert(1.50,null)
+
+$currencies_value = convert(1.50,["USD","OMR","AED"])
 ```
 
 ### Note:
