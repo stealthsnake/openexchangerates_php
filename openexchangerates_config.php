@@ -5,7 +5,7 @@ session_start();
 // Could also be e.g. 'currencies.json' or 'historical/2011-01-01.json'
 
 $file = 'latest.json';
-$appId = '7b4ce7951de14ac0a55fc61471a021ab';
+$appId = 'your ApppId';
 $currencies = ["USD","OMR","AED"];
 $exchangeRates="null";
 $base_currency = null;
@@ -25,7 +25,7 @@ $base_currency = null;
 	}
 
 /* function for Single-Currency Conversion to your base currency */
-function convert_to($value=1,$to="OMR")
+function convert_to($value,$to)
 {
 	global $exchangeRates;
 	$currency1 = $exchangeRates->rates->$to;
@@ -38,7 +38,7 @@ function convert_to($value=1,$to="OMR")
 /* function to covert for one currnecy to another, using your base Currency as base to convert to
 e.g currency 1 to base Currency to currency 2 */
 
-function convert_from_to($value=1,$from,$to)
+function convert_from_to($value,$from,$to)
 {
 	global $exchangeRates;
 
@@ -64,7 +64,7 @@ e.g = ["USD","OMR","AED"]
 if $currencies and $your_currencies are quual to null, it could convert to 
 all currencies provided by openexchangerates.org */
 
-function convert($currency_value=1,$your_currencies=null)
+function convert($currency_value,$your_currencies)
 {
 	global $exchangeRates, $currencies;
 
